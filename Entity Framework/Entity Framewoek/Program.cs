@@ -10,9 +10,23 @@ namespace Entity_Framewoek
     {
         static void Main(string[] args)
         { 
-           using (Model1Container container = new  Model1Container())
+           using (Model1Container containerdb = new  Model1Container())
             {
-                    
+                YerevanMallKFC yerevanMallKFC = new YerevanMallKFC
+                {
+                    FirstName ="Vardan",
+                    LAstName="Geyvandov",
+                    Gender="Male",
+                    Age=23
+                };
+
+                containerdb.YerevanMallKFCs.Add(yerevanMallKFC);
+                
+
+
+
+
+
             }
         }
     }
