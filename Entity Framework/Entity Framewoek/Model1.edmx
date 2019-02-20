@@ -1,0 +1,939 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Derjavas" EntityType="Model1.Store.Derjavas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="YerevanMallKFCs" EntityType="Model1.Store.YerevanMallKFCs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KomitasKFCs" EntityType="Model1.Store.KomitasKFCs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MoskovyanKFCs" EntityType="Model1.Store.MoskovyanKFCs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RIOKFCs" EntityType="Model1.Store.RIOKFCs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DalmaMallKFCs" EntityType="Model1.Store.DalmaMallKFCs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Delivaries" EntityType="Model1.Store.Delivaries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Suppliers" EntityType="Model1.Store.Suppliers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="YerevanMallKFCSupplier1" EntityType="Model1.Store.YerevanMallKFCSupplier1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DalmaMallKFCSupplier" EntityType="Model1.Store.DalmaMallKFCSupplier" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KomitasKFCSupplier" EntityType="Model1.Store.KomitasKFCSupplier" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MoskovyanKFCSupplier" EntityType="Model1.Store.MoskovyanKFCSupplier" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RIOKFCSupplier" EntityType="Model1.Store.RIOKFCSupplier" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RIOKFCSupplier1" EntityType="Model1.Store.RIOKFCSupplier1" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="YerevanMallKFCDerjava" Association="Model1.Store.YerevanMallKFCDerjava">
+      <End Role="YerevanMallKFC" EntitySet="YerevanMallKFCs" />
+      <End Role="Derjava" EntitySet="Derjavas" />
+    </AssociationSet>
+    <AssociationSet Name="DalmaMallKFCDerjava" Association="Model1.Store.DalmaMallKFCDerjava">
+      <End Role="DalmaMallKFC" EntitySet="DalmaMallKFCs" />
+      <End Role="Derjava" EntitySet="Derjavas" />
+    </AssociationSet>
+    <AssociationSet Name="KomitasKFCDerjava" Association="Model1.Store.KomitasKFCDerjava">
+      <End Role="KomitasKFC" EntitySet="KomitasKFCs" />
+      <End Role="Derjava" EntitySet="Derjavas" />
+    </AssociationSet>
+    <AssociationSet Name="MoskovyanKFCDerjava" Association="Model1.Store.MoskovyanKFCDerjava">
+      <End Role="MoskovyanKFC" EntitySet="MoskovyanKFCs" />
+      <End Role="Derjava" EntitySet="Derjavas" />
+    </AssociationSet>
+    <AssociationSet Name="RIOKFCDerjava" Association="Model1.Store.RIOKFCDerjava">
+      <End Role="RIOKFC" EntitySet="RIOKFCs" />
+      <End Role="Derjava" EntitySet="Derjavas" />
+    </AssociationSet>
+    <AssociationSet Name="MoskovyanKFCDelivary" Association="Model1.Store.MoskovyanKFCDelivary">
+      <End Role="MoskovyanKFC" EntitySet="MoskovyanKFCs" />
+      <End Role="Delivary" EntitySet="Delivaries" />
+    </AssociationSet>
+    <AssociationSet Name="KomitasKFCDelivary" Association="Model1.Store.KomitasKFCDelivary">
+      <End Role="KomitasKFC" EntitySet="KomitasKFCs" />
+      <End Role="Delivary" EntitySet="Delivaries" />
+    </AssociationSet>
+    <AssociationSet Name="YerevanMallKFCSupplier" Association="Model1.Store.YerevanMallKFCSupplier">
+      <End Role="YerevanMallKFC" EntitySet="YerevanMallKFCs" />
+      <End Role="Supplier" EntitySet="Suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_YerevanMallKFCSupplier1_YerevanMallKFC" Association="Model1.Store.FK_YerevanMallKFCSupplier1_YerevanMallKFC">
+      <End Role="YerevanMallKFC" EntitySet="YerevanMallKFCs" />
+      <End Role="YerevanMallKFCSupplier1" EntitySet="YerevanMallKFCSupplier1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_YerevanMallKFCSupplier1_Supplier" Association="Model1.Store.FK_YerevanMallKFCSupplier1_Supplier">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="YerevanMallKFCSupplier1" EntitySet="YerevanMallKFCSupplier1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DalmaMallKFCSupplier_DalmaMallKFC" Association="Model1.Store.FK_DalmaMallKFCSupplier_DalmaMallKFC">
+      <End Role="DalmaMallKFC" EntitySet="DalmaMallKFCs" />
+      <End Role="DalmaMallKFCSupplier" EntitySet="DalmaMallKFCSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DalmaMallKFCSupplier_Supplier" Association="Model1.Store.FK_DalmaMallKFCSupplier_Supplier">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="DalmaMallKFCSupplier" EntitySet="DalmaMallKFCSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KomitasKFCSupplier_KomitasKFC" Association="Model1.Store.FK_KomitasKFCSupplier_KomitasKFC">
+      <End Role="KomitasKFC" EntitySet="KomitasKFCs" />
+      <End Role="KomitasKFCSupplier" EntitySet="KomitasKFCSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KomitasKFCSupplier_Supplier" Association="Model1.Store.FK_KomitasKFCSupplier_Supplier">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="KomitasKFCSupplier" EntitySet="KomitasKFCSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MoskovyanKFCSupplier_MoskovyanKFC" Association="Model1.Store.FK_MoskovyanKFCSupplier_MoskovyanKFC">
+      <End Role="MoskovyanKFC" EntitySet="MoskovyanKFCs" />
+      <End Role="MoskovyanKFCSupplier" EntitySet="MoskovyanKFCSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MoskovyanKFCSupplier_Supplier" Association="Model1.Store.FK_MoskovyanKFCSupplier_Supplier">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="MoskovyanKFCSupplier" EntitySet="MoskovyanKFCSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RIOKFCSupplier_RIOKFC" Association="Model1.Store.FK_RIOKFCSupplier_RIOKFC">
+      <End Role="RIOKFC" EntitySet="RIOKFCs" />
+      <End Role="RIOKFCSupplier" EntitySet="RIOKFCSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RIOKFCSupplier_Supplier" Association="Model1.Store.FK_RIOKFCSupplier_Supplier">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="RIOKFCSupplier" EntitySet="RIOKFCSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RIOKFCSupplier1_RIOKFC" Association="Model1.Store.FK_RIOKFCSupplier1_RIOKFC">
+      <End Role="RIOKFC" EntitySet="RIOKFCs" />
+      <End Role="RIOKFCSupplier1" EntitySet="RIOKFCSupplier1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RIOKFCSupplier1_Supplier" Association="Model1.Store.FK_RIOKFCSupplier1_Supplier">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="RIOKFCSupplier1" EntitySet="RIOKFCSupplier1" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Derjavas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExecutiveDirector" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ACCOUNTANT" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="YerevanMallKFCId" Type="int" Nullable="false" />
+    <Property Name="DalmaMallKFCId" Type="int" Nullable="false" />
+    <Property Name="KomitasKFCId" Type="int" Nullable="false" />
+    <Property Name="MoskovyanKFCId" Type="int" Nullable="false" />
+    <Property Name="RIOKFCId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="YerevanMallKFCs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LAstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KomitasKFCs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MoskovyanKFCs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FristName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RIOKFCs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DalmaMallKFCs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Delivaries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DriverName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CarType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MoskovyanKFCId" Type="int" Nullable="false" />
+    <Property Name="KomitasKFCId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DriverName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CarType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="YerevanMallKFCId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="YerevanMallKFCSupplier1">
+    <Key>
+      <PropertyRef Name="YerevanMallKFC1_Id" />
+      <PropertyRef Name="Suppliers_Id" />
+    </Key>
+    <Property Name="YerevanMallKFC1_Id" Type="int" Nullable="false" />
+    <Property Name="Suppliers_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DalmaMallKFCSupplier">
+    <Key>
+      <PropertyRef Name="DalmaMallKFCs_Id" />
+      <PropertyRef Name="Suppliers_Id" />
+    </Key>
+    <Property Name="DalmaMallKFCs_Id" Type="int" Nullable="false" />
+    <Property Name="Suppliers_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KomitasKFCSupplier">
+    <Key>
+      <PropertyRef Name="KomitasKFCs_Id" />
+      <PropertyRef Name="Suppliers_Id" />
+    </Key>
+    <Property Name="KomitasKFCs_Id" Type="int" Nullable="false" />
+    <Property Name="Suppliers_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MoskovyanKFCSupplier">
+    <Key>
+      <PropertyRef Name="MoskovyanKFCs_Id" />
+      <PropertyRef Name="Suppliers_Id" />
+    </Key>
+    <Property Name="MoskovyanKFCs_Id" Type="int" Nullable="false" />
+    <Property Name="Suppliers_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RIOKFCSupplier">
+    <Key>
+      <PropertyRef Name="RIOKFCs_Id" />
+      <PropertyRef Name="Suppliers_Id" />
+    </Key>
+    <Property Name="RIOKFCs_Id" Type="int" Nullable="false" />
+    <Property Name="Suppliers_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RIOKFCSupplier1">
+    <Key>
+      <PropertyRef Name="RIOKFC_Id" />
+      <PropertyRef Name="Suppliers1_Id" />
+    </Key>
+    <Property Name="RIOKFC_Id" Type="int" Nullable="false" />
+    <Property Name="Suppliers1_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="YerevanMallKFCDerjava">
+    <End Role="YerevanMallKFC" Type="Model1.Store.YerevanMallKFCs" Multiplicity="1" />
+    <End Role="Derjava" Type="Model1.Store.Derjavas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="YerevanMallKFC">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Derjava">
+        <PropertyRef Name="YerevanMallKFCId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DalmaMallKFCDerjava">
+    <End Role="DalmaMallKFC" Type="Model1.Store.DalmaMallKFCs" Multiplicity="1" />
+    <End Role="Derjava" Type="Model1.Store.Derjavas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DalmaMallKFC">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Derjava">
+        <PropertyRef Name="DalmaMallKFCId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KomitasKFCDerjava">
+    <End Role="KomitasKFC" Type="Model1.Store.KomitasKFCs" Multiplicity="1" />
+    <End Role="Derjava" Type="Model1.Store.Derjavas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KomitasKFC">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Derjava">
+        <PropertyRef Name="KomitasKFCId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MoskovyanKFCDerjava">
+    <End Role="MoskovyanKFC" Type="Model1.Store.MoskovyanKFCs" Multiplicity="1" />
+    <End Role="Derjava" Type="Model1.Store.Derjavas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MoskovyanKFC">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Derjava">
+        <PropertyRef Name="MoskovyanKFCId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RIOKFCDerjava">
+    <End Role="RIOKFC" Type="Model1.Store.RIOKFCs" Multiplicity="1" />
+    <End Role="Derjava" Type="Model1.Store.Derjavas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RIOKFC">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Derjava">
+        <PropertyRef Name="RIOKFCId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MoskovyanKFCDelivary">
+    <End Role="MoskovyanKFC" Type="Model1.Store.MoskovyanKFCs" Multiplicity="1" />
+    <End Role="Delivary" Type="Model1.Store.Delivaries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MoskovyanKFC">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Delivary">
+        <PropertyRef Name="MoskovyanKFCId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KomitasKFCDelivary">
+    <End Role="KomitasKFC" Type="Model1.Store.KomitasKFCs" Multiplicity="1" />
+    <End Role="Delivary" Type="Model1.Store.Delivaries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KomitasKFC">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Delivary">
+        <PropertyRef Name="KomitasKFCId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="YerevanMallKFCSupplier">
+    <End Role="YerevanMallKFC" Type="Model1.Store.YerevanMallKFCs" Multiplicity="1" />
+    <End Role="Supplier" Type="Model1.Store.Suppliers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="YerevanMallKFC">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Supplier">
+        <PropertyRef Name="YerevanMallKFCId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_YerevanMallKFCSupplier1_YerevanMallKFC">
+    <End Role="YerevanMallKFC" Type="Model1.Store.YerevanMallKFCs" Multiplicity="1" />
+    <End Role="YerevanMallKFCSupplier1" Type="Model1.Store.YerevanMallKFCSupplier1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="YerevanMallKFC">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="YerevanMallKFCSupplier1">
+        <PropertyRef Name="YerevanMallKFC1_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_YerevanMallKFCSupplier1_Supplier">
+    <End Role="YerevanMallKFCSupplier1" Type="Model1.Store.YerevanMallKFCSupplier1" Multiplicity="*" />
+    <End Role="Supplier" Type="Model1.Store.Suppliers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="YerevanMallKFCSupplier1">
+        <PropertyRef Name="Suppliers_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DalmaMallKFCSupplier_DalmaMallKFC">
+    <End Role="DalmaMallKFC" Type="Model1.Store.DalmaMallKFCs" Multiplicity="1" />
+    <End Role="DalmaMallKFCSupplier" Type="Model1.Store.DalmaMallKFCSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DalmaMallKFC">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DalmaMallKFCSupplier">
+        <PropertyRef Name="DalmaMallKFCs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DalmaMallKFCSupplier_Supplier">
+    <End Role="DalmaMallKFCSupplier" Type="Model1.Store.DalmaMallKFCSupplier" Multiplicity="*" />
+    <End Role="Supplier" Type="Model1.Store.Suppliers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DalmaMallKFCSupplier">
+        <PropertyRef Name="Suppliers_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KomitasKFCSupplier_KomitasKFC">
+    <End Role="KomitasKFC" Type="Model1.Store.KomitasKFCs" Multiplicity="1" />
+    <End Role="KomitasKFCSupplier" Type="Model1.Store.KomitasKFCSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KomitasKFC">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="KomitasKFCSupplier">
+        <PropertyRef Name="KomitasKFCs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KomitasKFCSupplier_Supplier">
+    <End Role="KomitasKFCSupplier" Type="Model1.Store.KomitasKFCSupplier" Multiplicity="*" />
+    <End Role="Supplier" Type="Model1.Store.Suppliers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="KomitasKFCSupplier">
+        <PropertyRef Name="Suppliers_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MoskovyanKFCSupplier_MoskovyanKFC">
+    <End Role="MoskovyanKFC" Type="Model1.Store.MoskovyanKFCs" Multiplicity="1" />
+    <End Role="MoskovyanKFCSupplier" Type="Model1.Store.MoskovyanKFCSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MoskovyanKFC">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MoskovyanKFCSupplier">
+        <PropertyRef Name="MoskovyanKFCs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MoskovyanKFCSupplier_Supplier">
+    <End Role="MoskovyanKFCSupplier" Type="Model1.Store.MoskovyanKFCSupplier" Multiplicity="*" />
+    <End Role="Supplier" Type="Model1.Store.Suppliers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MoskovyanKFCSupplier">
+        <PropertyRef Name="Suppliers_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RIOKFCSupplier_RIOKFC">
+    <End Role="RIOKFC" Type="Model1.Store.RIOKFCs" Multiplicity="1" />
+    <End Role="RIOKFCSupplier" Type="Model1.Store.RIOKFCSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RIOKFC">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RIOKFCSupplier">
+        <PropertyRef Name="RIOKFCs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RIOKFCSupplier_Supplier">
+    <End Role="RIOKFCSupplier" Type="Model1.Store.RIOKFCSupplier" Multiplicity="*" />
+    <End Role="Supplier" Type="Model1.Store.Suppliers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RIOKFCSupplier">
+        <PropertyRef Name="Suppliers_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RIOKFCSupplier1_RIOKFC">
+    <End Role="RIOKFC" Type="Model1.Store.RIOKFCs" Multiplicity="1" />
+    <End Role="RIOKFCSupplier1" Type="Model1.Store.RIOKFCSupplier1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RIOKFC">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RIOKFCSupplier1">
+        <PropertyRef Name="RIOKFC_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RIOKFCSupplier1_Supplier">
+    <End Role="RIOKFCSupplier1" Type="Model1.Store.RIOKFCSupplier1" Multiplicity="*" />
+    <End Role="Supplier" Type="Model1.Store.Suppliers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RIOKFCSupplier1">
+        <PropertyRef Name="Suppliers1_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Derjavas" EntityType="Model1.Derjava" />
+          <EntitySet Name="YerevanMallKFCs" EntityType="Model1.YerevanMallKFC" />
+          <EntitySet Name="KomitasKFCs" EntityType="Model1.KomitasKFC" />
+          <EntitySet Name="MoskovyanKFCs" EntityType="Model1.MoskovyanKFC" />
+          <EntitySet Name="RIOKFCs" EntityType="Model1.RIOKFC" />
+          <EntitySet Name="DalmaMallKFCs" EntityType="Model1.DalmaMallKFC" />
+          <EntitySet Name="Delivaries" EntityType="Model1.Delivary" />
+          <EntitySet Name="Suppliers" EntityType="Model1.Supplier" />
+          <AssociationSet Name="YerevanMallKFCDerjava" Association="Model1.YerevanMallKFCDerjava">
+            <End Role="YerevanMallKFC" EntitySet="YerevanMallKFCs" />
+            <End Role="Derjava" EntitySet="Derjavas" />
+          </AssociationSet>
+          <AssociationSet Name="DalmaMallKFCDerjava" Association="Model1.DalmaMallKFCDerjava">
+            <End Role="DalmaMallKFC" EntitySet="DalmaMallKFCs" />
+            <End Role="Derjava" EntitySet="Derjavas" />
+          </AssociationSet>
+          <AssociationSet Name="KomitasKFCDerjava" Association="Model1.KomitasKFCDerjava">
+            <End Role="KomitasKFC" EntitySet="KomitasKFCs" />
+            <End Role="Derjava" EntitySet="Derjavas" />
+          </AssociationSet>
+          <AssociationSet Name="MoskovyanKFCDerjava" Association="Model1.MoskovyanKFCDerjava">
+            <End Role="MoskovyanKFC" EntitySet="MoskovyanKFCs" />
+            <End Role="Derjava" EntitySet="Derjavas" />
+          </AssociationSet>
+          <AssociationSet Name="RIOKFCDerjava" Association="Model1.RIOKFCDerjava">
+            <End Role="RIOKFC" EntitySet="RIOKFCs" />
+            <End Role="Derjava" EntitySet="Derjavas" />
+          </AssociationSet>
+          <AssociationSet Name="MoskovyanKFCDelivary" Association="Model1.MoskovyanKFCDelivary">
+            <End Role="MoskovyanKFC" EntitySet="MoskovyanKFCs" />
+            <End Role="Delivary" EntitySet="Delivaries" />
+          </AssociationSet>
+          <AssociationSet Name="KomitasKFCDelivary" Association="Model1.KomitasKFCDelivary">
+            <End Role="KomitasKFC" EntitySet="KomitasKFCs" />
+            <End Role="Delivary" EntitySet="Delivaries" />
+          </AssociationSet>
+          <AssociationSet Name="YerevanMallKFCSupplier" Association="Model1.YerevanMallKFCSupplier">
+            <End Role="YerevanMallKFC" EntitySet="YerevanMallKFCs" />
+            <End Role="Supplier" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="YerevanMallKFCSupplier1" Association="Model1.YerevanMallKFCSupplier1">
+            <End Role="YerevanMallKFC" EntitySet="YerevanMallKFCs" />
+            <End Role="Supplier" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="DalmaMallKFCSupplier" Association="Model1.DalmaMallKFCSupplier">
+            <End Role="DalmaMallKFC" EntitySet="DalmaMallKFCs" />
+            <End Role="Supplier" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="KomitasKFCSupplier" Association="Model1.KomitasKFCSupplier">
+            <End Role="KomitasKFC" EntitySet="KomitasKFCs" />
+            <End Role="Supplier" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="MoskovyanKFCSupplier" Association="Model1.MoskovyanKFCSupplier">
+            <End Role="MoskovyanKFC" EntitySet="MoskovyanKFCs" />
+            <End Role="Supplier" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="RIOKFCSupplier" Association="Model1.RIOKFCSupplier">
+            <End Role="RIOKFC" EntitySet="RIOKFCs" />
+            <End Role="Supplier" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="RIOKFCSupplier1" Association="Model1.RIOKFCSupplier1">
+            <End Role="RIOKFC" EntitySet="RIOKFCs" />
+            <End Role="Supplier" EntitySet="Suppliers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Derjava">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExecutiveDirector" Type="String" Nullable="false" />
+          <Property Name="ACCOUNTANT" Type="String" Nullable="false" />
+          <Property Name="YerevanMallKFCId" Type="Int32" Nullable="false" />
+          <Property Name="DalmaMallKFCId" Type="Int32" Nullable="false" />
+          <Property Name="KomitasKFCId" Type="Int32" Nullable="false" />
+          <Property Name="MoskovyanKFCId" Type="Int32" Nullable="false" />
+          <Property Name="RIOKFCId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="YerevanMallKFC" Relationship="Model1.YerevanMallKFCDerjava" FromRole="Derjava" ToRole="YerevanMallKFC" />
+          <NavigationProperty Name="DalmaMallKFC" Relationship="Model1.DalmaMallKFCDerjava" FromRole="Derjava" ToRole="DalmaMallKFC" />
+          <NavigationProperty Name="KomitasKFC" Relationship="Model1.KomitasKFCDerjava" FromRole="Derjava" ToRole="KomitasKFC" />
+          <NavigationProperty Name="MoskovyanKFC" Relationship="Model1.MoskovyanKFCDerjava" FromRole="Derjava" ToRole="MoskovyanKFC" />
+          <NavigationProperty Name="RIOKFC" Relationship="Model1.RIOKFCDerjava" FromRole="Derjava" ToRole="RIOKFC" />
+        </EntityType>
+        <EntityType Name="YerevanMallKFC">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" />
+          <Property Name="LAstName" Type="String" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Gender" Type="String" Nullable="false" />
+          <NavigationProperty Name="Derjavas" Relationship="Model1.YerevanMallKFCDerjava" FromRole="YerevanMallKFC" ToRole="Derjava" />
+          <NavigationProperty Name="Suppliers" Relationship="Model1.YerevanMallKFCSupplier1" FromRole="YerevanMallKFC" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="KomitasKFC">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Gender" Type="String" Nullable="false" />
+          <NavigationProperty Name="Derjavas" Relationship="Model1.KomitasKFCDerjava" FromRole="KomitasKFC" ToRole="Derjava" />
+          <NavigationProperty Name="Delivaries" Relationship="Model1.KomitasKFCDelivary" FromRole="KomitasKFC" ToRole="Delivary" />
+          <NavigationProperty Name="Suppliers" Relationship="Model1.KomitasKFCSupplier" FromRole="KomitasKFC" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="MoskovyanKFC">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FristName" Type="String" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Gender" Type="String" Nullable="false" />
+          <NavigationProperty Name="Derjavas" Relationship="Model1.MoskovyanKFCDerjava" FromRole="MoskovyanKFC" ToRole="Derjava" />
+          <NavigationProperty Name="Delivaries" Relationship="Model1.MoskovyanKFCDelivary" FromRole="MoskovyanKFC" ToRole="Delivary" />
+          <NavigationProperty Name="Suppliers" Relationship="Model1.MoskovyanKFCSupplier" FromRole="MoskovyanKFC" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="RIOKFC">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Gender" Type="String" Nullable="false" />
+          <NavigationProperty Name="Derjavas" Relationship="Model1.RIOKFCDerjava" FromRole="RIOKFC" ToRole="Derjava" />
+          <NavigationProperty Name="Suppliers" Relationship="Model1.RIOKFCSupplier" FromRole="RIOKFC" ToRole="Supplier" />
+          <NavigationProperty Name="Suppliers1" Relationship="Model1.RIOKFCSupplier1" FromRole="RIOKFC" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="DalmaMallKFC">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Gender" Type="String" Nullable="false" />
+          <NavigationProperty Name="Derjavas" Relationship="Model1.DalmaMallKFCDerjava" FromRole="DalmaMallKFC" ToRole="Derjava" />
+          <NavigationProperty Name="Suppliers" Relationship="Model1.DalmaMallKFCSupplier" FromRole="DalmaMallKFC" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="Delivary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DriverName" Type="String" Nullable="false" />
+          <Property Name="CarType" Type="String" Nullable="false" />
+          <Property Name="MoskovyanKFCId" Type="Int32" Nullable="false" />
+          <Property Name="KomitasKFCId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MoskovyanKFC" Relationship="Model1.MoskovyanKFCDelivary" FromRole="Delivary" ToRole="MoskovyanKFC" />
+          <NavigationProperty Name="KomitasKFC" Relationship="Model1.KomitasKFCDelivary" FromRole="Delivary" ToRole="KomitasKFC" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DriverName" Type="String" Nullable="false" />
+          <Property Name="CarType" Type="String" Nullable="false" />
+          <Property Name="YerevanMallKFCId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="YerevanMallKFC" Relationship="Model1.YerevanMallKFCSupplier" FromRole="Supplier" ToRole="YerevanMallKFC" />
+          <NavigationProperty Name="YerevanMallKFC1" Relationship="Model1.YerevanMallKFCSupplier1" FromRole="Supplier" ToRole="YerevanMallKFC" />
+          <NavigationProperty Name="DalmaMallKFCs" Relationship="Model1.DalmaMallKFCSupplier" FromRole="Supplier" ToRole="DalmaMallKFC" />
+          <NavigationProperty Name="KomitasKFCs" Relationship="Model1.KomitasKFCSupplier" FromRole="Supplier" ToRole="KomitasKFC" />
+          <NavigationProperty Name="MoskovyanKFCs" Relationship="Model1.MoskovyanKFCSupplier" FromRole="Supplier" ToRole="MoskovyanKFC" />
+          <NavigationProperty Name="RIOKFCs" Relationship="Model1.RIOKFCSupplier" FromRole="Supplier" ToRole="RIOKFC" />
+          <NavigationProperty Name="RIOKFC" Relationship="Model1.RIOKFCSupplier1" FromRole="Supplier" ToRole="RIOKFC" />
+        </EntityType>
+        <Association Name="YerevanMallKFCDerjava">
+          <End Type="Model1.YerevanMallKFC" Role="YerevanMallKFC" Multiplicity="1" />
+          <End Type="Model1.Derjava" Role="Derjava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YerevanMallKFC">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Derjava">
+              <PropertyRef Name="YerevanMallKFCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DalmaMallKFCDerjava">
+          <End Type="Model1.DalmaMallKFC" Role="DalmaMallKFC" Multiplicity="1" />
+          <End Type="Model1.Derjava" Role="Derjava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DalmaMallKFC">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Derjava">
+              <PropertyRef Name="DalmaMallKFCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KomitasKFCDerjava">
+          <End Type="Model1.KomitasKFC" Role="KomitasKFC" Multiplicity="1" />
+          <End Type="Model1.Derjava" Role="Derjava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KomitasKFC">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Derjava">
+              <PropertyRef Name="KomitasKFCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MoskovyanKFCDerjava">
+          <End Type="Model1.MoskovyanKFC" Role="MoskovyanKFC" Multiplicity="1" />
+          <End Type="Model1.Derjava" Role="Derjava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MoskovyanKFC">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Derjava">
+              <PropertyRef Name="MoskovyanKFCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RIOKFCDerjava">
+          <End Type="Model1.RIOKFC" Role="RIOKFC" Multiplicity="1" />
+          <End Type="Model1.Derjava" Role="Derjava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RIOKFC">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Derjava">
+              <PropertyRef Name="RIOKFCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MoskovyanKFCDelivary">
+          <End Type="Model1.MoskovyanKFC" Role="MoskovyanKFC" Multiplicity="1" />
+          <End Type="Model1.Delivary" Role="Delivary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MoskovyanKFC">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Delivary">
+              <PropertyRef Name="MoskovyanKFCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KomitasKFCDelivary">
+          <End Type="Model1.KomitasKFC" Role="KomitasKFC" Multiplicity="1" />
+          <End Type="Model1.Delivary" Role="Delivary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KomitasKFC">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Delivary">
+              <PropertyRef Name="KomitasKFCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="YerevanMallKFCSupplier">
+          <End Type="Model1.YerevanMallKFC" Role="YerevanMallKFC" Multiplicity="1" />
+          <End Type="Model1.Supplier" Role="Supplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YerevanMallKFC">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Supplier">
+              <PropertyRef Name="YerevanMallKFCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="YerevanMallKFCSupplier1">
+          <End Type="Model1.YerevanMallKFC" Role="YerevanMallKFC" Multiplicity="*" />
+          <End Type="Model1.Supplier" Role="Supplier" Multiplicity="*" />
+        </Association>
+        <Association Name="DalmaMallKFCSupplier">
+          <End Type="Model1.DalmaMallKFC" Role="DalmaMallKFC" Multiplicity="*" />
+          <End Type="Model1.Supplier" Role="Supplier" Multiplicity="*" />
+        </Association>
+        <Association Name="KomitasKFCSupplier">
+          <End Type="Model1.KomitasKFC" Role="KomitasKFC" Multiplicity="*" />
+          <End Type="Model1.Supplier" Role="Supplier" Multiplicity="*" />
+        </Association>
+        <Association Name="MoskovyanKFCSupplier">
+          <End Type="Model1.MoskovyanKFC" Role="MoskovyanKFC" Multiplicity="*" />
+          <End Type="Model1.Supplier" Role="Supplier" Multiplicity="*" />
+        </Association>
+        <Association Name="RIOKFCSupplier">
+          <End Type="Model1.RIOKFC" Role="RIOKFC" Multiplicity="*" />
+          <End Type="Model1.Supplier" Role="Supplier" Multiplicity="*" />
+        </Association>
+        <Association Name="RIOKFCSupplier1">
+          <End Type="Model1.RIOKFC" Role="RIOKFC" Multiplicity="*" />
+          <End Type="Model1.Supplier" Role="Supplier" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Derjavas">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Derjava)">
+        <MappingFragment StoreEntitySet="Derjavas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExecutiveDirector" ColumnName="ExecutiveDirector" />
+          <ScalarProperty Name="ACCOUNTANT" ColumnName="ACCOUNTANT" />
+          <ScalarProperty Name="YerevanMallKFCId" ColumnName="YerevanMallKFCId" />
+          <ScalarProperty Name="DalmaMallKFCId" ColumnName="DalmaMallKFCId" />
+          <ScalarProperty Name="KomitasKFCId" ColumnName="KomitasKFCId" />
+          <ScalarProperty Name="MoskovyanKFCId" ColumnName="MoskovyanKFCId" />
+          <ScalarProperty Name="RIOKFCId" ColumnName="RIOKFCId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YerevanMallKFCs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.YerevanMallKFC)">
+        <MappingFragment StoreEntitySet="YerevanMallKFCs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LAstName" ColumnName="LAstName" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KomitasKFCs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.KomitasKFC)">
+        <MappingFragment StoreEntitySet="KomitasKFCs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MoskovyanKFCs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.MoskovyanKFC)">
+        <MappingFragment StoreEntitySet="MoskovyanKFCs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FristName" ColumnName="FristName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RIOKFCs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.RIOKFC)">
+        <MappingFragment StoreEntitySet="RIOKFCs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DalmaMallKFCs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.DalmaMallKFC)">
+        <MappingFragment StoreEntitySet="DalmaMallKFCs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Delivaries">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Delivary)">
+        <MappingFragment StoreEntitySet="Delivaries">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+          <ScalarProperty Name="CarType" ColumnName="CarType" />
+          <ScalarProperty Name="MoskovyanKFCId" ColumnName="MoskovyanKFCId" />
+          <ScalarProperty Name="KomitasKFCId" ColumnName="KomitasKFCId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Supplier)">
+        <MappingFragment StoreEntitySet="Suppliers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+          <ScalarProperty Name="CarType" ColumnName="CarType" />
+          <ScalarProperty Name="YerevanMallKFCId" ColumnName="YerevanMallKFCId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="YerevanMallKFCSupplier1" TypeName="Model1.YerevanMallKFCSupplier1" StoreEntitySet="YerevanMallKFCSupplier1">
+      <EndProperty Name="YerevanMallKFC">
+        <ScalarProperty Name="Id" ColumnName="YerevanMallKFC1_Id" />
+      </EndProperty>
+      <EndProperty Name="Supplier">
+        <ScalarProperty Name="Id" ColumnName="Suppliers_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DalmaMallKFCSupplier" TypeName="Model1.DalmaMallKFCSupplier" StoreEntitySet="DalmaMallKFCSupplier">
+      <EndProperty Name="DalmaMallKFC">
+        <ScalarProperty Name="Id" ColumnName="DalmaMallKFCs_Id" />
+      </EndProperty>
+      <EndProperty Name="Supplier">
+        <ScalarProperty Name="Id" ColumnName="Suppliers_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="KomitasKFCSupplier" TypeName="Model1.KomitasKFCSupplier" StoreEntitySet="KomitasKFCSupplier">
+      <EndProperty Name="KomitasKFC">
+        <ScalarProperty Name="Id" ColumnName="KomitasKFCs_Id" />
+      </EndProperty>
+      <EndProperty Name="Supplier">
+        <ScalarProperty Name="Id" ColumnName="Suppliers_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MoskovyanKFCSupplier" TypeName="Model1.MoskovyanKFCSupplier" StoreEntitySet="MoskovyanKFCSupplier">
+      <EndProperty Name="MoskovyanKFC">
+        <ScalarProperty Name="Id" ColumnName="MoskovyanKFCs_Id" />
+      </EndProperty>
+      <EndProperty Name="Supplier">
+        <ScalarProperty Name="Id" ColumnName="Suppliers_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RIOKFCSupplier" TypeName="Model1.RIOKFCSupplier" StoreEntitySet="RIOKFCSupplier">
+      <EndProperty Name="RIOKFC">
+        <ScalarProperty Name="Id" ColumnName="RIOKFCs_Id" />
+      </EndProperty>
+      <EndProperty Name="Supplier">
+        <ScalarProperty Name="Id" ColumnName="Suppliers_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RIOKFCSupplier1" TypeName="Model1.RIOKFCSupplier1" StoreEntitySet="RIOKFCSupplier1">
+      <EndProperty Name="RIOKFC">
+        <ScalarProperty Name="Id" ColumnName="RIOKFC_Id" />
+      </EndProperty>
+      <EndProperty Name="Supplier">
+        <ScalarProperty Name="Id" ColumnName="Suppliers1_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

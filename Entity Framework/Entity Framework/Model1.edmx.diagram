@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b7c71b1935bc4825b7a831ff49dfc62e" Name="Diagram1" ZoomLevel="100" >
+        <EntityTypeShape EntityType="Model1.Derjava" Width="1.5" PointX="2.5" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.YerevanMallKFC" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.KomitasKFC" Width="1.5" PointX="0.5" PointY="3.25" />
+        <EntityTypeShape EntityType="Model1.MoskovyanKFC" Width="1.5" PointX="2.75" PointY="3.25" />
+        <EntityTypeShape EntityType="Model1.RIOKFC" Width="1.5" PointX="5.25" PointY="3.25" />
+        <EntityTypeShape EntityType="Model1.DalmaMallKFC" Width="1.5" PointX="5.25" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.Delivary" Width="1.5" PointX="7.25" PointY="3.25" />
+        <EntityTypeShape EntityType="Model1.Supplier" Width="1.5" PointX="8.25" PointY="0.5" />
+        <AssociationConnector Association="Model1.YerevanMallKFCDerjava" />
+        <AssociationConnector Association="Model1.DalmaMallKFCDerjava" />
+        <AssociationConnector Association="Model1.KomitasKFCDerjava" />
+        <AssociationConnector Association="Model1.MoskovyanKFCDerjava" />
+        <AssociationConnector Association="Model1.RIOKFCDerjava" />
+        <AssociationConnector Association="Model1.YerevanMallKFCSupplier" />
+        <AssociationConnector Association="Model1.YerevanMallKFCSupplier1" />
+        <AssociationConnector Association="Model1.DalmaMallKFCSupplier" />
+        <AssociationConnector Association="Model1.KomitasKFCSupplier" />
+        <AssociationConnector Association="Model1.MoskovyanKFCSupplier" />
+        <AssociationConnector Association="Model1.RIOKFCSupplier" />
+        <AssociationConnector Association="Model1.RIOKFCSupplier1" />
+        <AssociationConnector Association="Model1.MoskovyanKFCDelivary" />
+        <AssociationConnector Association="Model1.KomitasKFCDelivary" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
