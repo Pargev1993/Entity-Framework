@@ -25,8 +25,8 @@ namespace Entity_Framewoek
     
         public virtual YerevanMallKFC YerevanMallKFC { get; set; }
         public virtual DalmaMallKFC DalmaMallKFC { get; set; }
-        public virtual KomitasKFC KomitasKFC { get; set; }
         public virtual MoskovyanKFC MoskovyanKFC { get; set; }
         public virtual RIOKFC RIOKFC { get; set; }
+        public virtual KomitasKFC KomitasKFC { get; set; }
     }
 }

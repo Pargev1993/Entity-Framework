@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/20/2019 12:02:55
--- Generated from EDMX file: C:\Users\pqoal\Source\Repos\Entity-Framework\Entity Framework\Entity Framewoek\Model1.edmx
+-- Date Created: 02/21/2019 10:06:39
+-- Generated from EDMX file: C:\Users\pqoal\Source\Repos\Entity-Framework2\Entity Framework\Entity Framewoek\Derjavadb.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -45,16 +45,6 @@ CREATE TABLE [dbo].[YerevanMallKFCs] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [FirstName] nvarchar(max)  NOT NULL,
     [LAstName] nvarchar(max)  NOT NULL,
-    [Age] int  NOT NULL,
-    [Gender] nvarchar(max)  NOT NULL
-);
-GO
-
--- Creating table 'KomitasKFCs'
-CREATE TABLE [dbo].[KomitasKFCs] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [FirstName] nvarchar(max)  NOT NULL,
-    [LastName] nvarchar(max)  NOT NULL,
     [Age] int  NOT NULL,
     [Gender] nvarchar(max)  NOT NULL
 );
@@ -109,6 +99,16 @@ CREATE TABLE [dbo].[Suppliers] (
 );
 GO
 
+-- Creating table 'KomitasKFCs'
+CREATE TABLE [dbo].[KomitasKFCs] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [FirstName] nvarchar(max)  NOT NULL,
+    [LastName] nvarchar(max)  NOT NULL,
+    [Age] int  NOT NULL,
+    [Gender] nvarchar(max)  NOT NULL
+);
+GO
+
 -- Creating table 'YerevanMallKFCSupplier1'
 CREATE TABLE [dbo].[YerevanMallKFCSupplier1] (
     [YerevanMallKFC1_Id] int  NOT NULL,
@@ -119,13 +119,6 @@ GO
 -- Creating table 'DalmaMallKFCSupplier'
 CREATE TABLE [dbo].[DalmaMallKFCSupplier] (
     [DalmaMallKFCs_Id] int  NOT NULL,
-    [Suppliers_Id] int  NOT NULL
-);
-GO
-
--- Creating table 'KomitasKFCSupplier'
-CREATE TABLE [dbo].[KomitasKFCSupplier] (
-    [KomitasKFCs_Id] int  NOT NULL,
     [Suppliers_Id] int  NOT NULL
 );
 GO
@@ -151,6 +144,13 @@ CREATE TABLE [dbo].[RIOKFCSupplier1] (
 );
 GO
 
+-- Creating table 'KomitasKFCSupplier'
+CREATE TABLE [dbo].[KomitasKFCSupplier] (
+    [KomitasKFCs_Id] int  NOT NULL,
+    [Suppliers_Id] int  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -164,12 +164,6 @@ GO
 -- Creating primary key on [Id] in table 'YerevanMallKFCs'
 ALTER TABLE [dbo].[YerevanMallKFCs]
 ADD CONSTRAINT [PK_YerevanMallKFCs]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [Id] in table 'KomitasKFCs'
-ALTER TABLE [dbo].[KomitasKFCs]
-ADD CONSTRAINT [PK_KomitasKFCs]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -203,6 +197,12 @@ ADD CONSTRAINT [PK_Suppliers]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
+-- Creating primary key on [Id] in table 'KomitasKFCs'
+ALTER TABLE [dbo].[KomitasKFCs]
+ADD CONSTRAINT [PK_KomitasKFCs]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
 -- Creating primary key on [YerevanMallKFC1_Id], [Suppliers_Id] in table 'YerevanMallKFCSupplier1'
 ALTER TABLE [dbo].[YerevanMallKFCSupplier1]
 ADD CONSTRAINT [PK_YerevanMallKFCSupplier1]
@@ -213,12 +213,6 @@ GO
 ALTER TABLE [dbo].[DalmaMallKFCSupplier]
 ADD CONSTRAINT [PK_DalmaMallKFCSupplier]
     PRIMARY KEY CLUSTERED ([DalmaMallKFCs_Id], [Suppliers_Id] ASC);
-GO
-
--- Creating primary key on [KomitasKFCs_Id], [Suppliers_Id] in table 'KomitasKFCSupplier'
-ALTER TABLE [dbo].[KomitasKFCSupplier]
-ADD CONSTRAINT [PK_KomitasKFCSupplier]
-    PRIMARY KEY CLUSTERED ([KomitasKFCs_Id], [Suppliers_Id] ASC);
 GO
 
 -- Creating primary key on [MoskovyanKFCs_Id], [Suppliers_Id] in table 'MoskovyanKFCSupplier'
@@ -237,6 +231,12 @@ GO
 ALTER TABLE [dbo].[RIOKFCSupplier1]
 ADD CONSTRAINT [PK_RIOKFCSupplier1]
     PRIMARY KEY CLUSTERED ([RIOKFC_Id], [Suppliers1_Id] ASC);
+GO
+
+-- Creating primary key on [KomitasKFCs_Id], [Suppliers_Id] in table 'KomitasKFCSupplier'
+ALTER TABLE [dbo].[KomitasKFCSupplier]
+ADD CONSTRAINT [PK_KomitasKFCSupplier]
+    PRIMARY KEY CLUSTERED ([KomitasKFCs_Id], [Suppliers_Id] ASC);
 GO
 
 -- --------------------------------------------------
@@ -273,21 +273,6 @@ ON [dbo].[Derjavas]
     ([DalmaMallKFCId]);
 GO
 
--- Creating foreign key on [KomitasKFCId] in table 'Derjavas'
-ALTER TABLE [dbo].[Derjavas]
-ADD CONSTRAINT [FK_KomitasKFCDerjava]
-    FOREIGN KEY ([KomitasKFCId])
-    REFERENCES [dbo].[KomitasKFCs]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_KomitasKFCDerjava'
-CREATE INDEX [IX_FK_KomitasKFCDerjava]
-ON [dbo].[Derjavas]
-    ([KomitasKFCId]);
-GO
-
 -- Creating foreign key on [MoskovyanKFCId] in table 'Derjavas'
 ALTER TABLE [dbo].[Derjavas]
 ADD CONSTRAINT [FK_MoskovyanKFCDerjava]
@@ -316,6 +301,21 @@ GO
 CREATE INDEX [IX_FK_RIOKFCDerjava]
 ON [dbo].[Derjavas]
     ([RIOKFCId]);
+GO
+
+-- Creating foreign key on [KomitasKFCId] in table 'Derjavas'
+ALTER TABLE [dbo].[Derjavas]
+ADD CONSTRAINT [FK_KomitasKFCDerjava]
+    FOREIGN KEY ([KomitasKFCId])
+    REFERENCES [dbo].[KomitasKFCs]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_KomitasKFCDerjava'
+CREATE INDEX [IX_FK_KomitasKFCDerjava]
+ON [dbo].[Derjavas]
+    ([KomitasKFCId]);
 GO
 
 -- Creating foreign key on [MoskovyanKFCId] in table 'Delivaries'
@@ -411,30 +411,6 @@ ON [dbo].[DalmaMallKFCSupplier]
     ([Suppliers_Id]);
 GO
 
--- Creating foreign key on [KomitasKFCs_Id] in table 'KomitasKFCSupplier'
-ALTER TABLE [dbo].[KomitasKFCSupplier]
-ADD CONSTRAINT [FK_KomitasKFCSupplier_KomitasKFC]
-    FOREIGN KEY ([KomitasKFCs_Id])
-    REFERENCES [dbo].[KomitasKFCs]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating foreign key on [Suppliers_Id] in table 'KomitasKFCSupplier'
-ALTER TABLE [dbo].[KomitasKFCSupplier]
-ADD CONSTRAINT [FK_KomitasKFCSupplier_Supplier]
-    FOREIGN KEY ([Suppliers_Id])
-    REFERENCES [dbo].[Suppliers]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_KomitasKFCSupplier_Supplier'
-CREATE INDEX [IX_FK_KomitasKFCSupplier_Supplier]
-ON [dbo].[KomitasKFCSupplier]
-    ([Suppliers_Id]);
-GO
-
 -- Creating foreign key on [MoskovyanKFCs_Id] in table 'MoskovyanKFCSupplier'
 ALTER TABLE [dbo].[MoskovyanKFCSupplier]
 ADD CONSTRAINT [FK_MoskovyanKFCSupplier_MoskovyanKFC]
@@ -505,6 +481,30 @@ GO
 CREATE INDEX [IX_FK_RIOKFCSupplier1_Supplier]
 ON [dbo].[RIOKFCSupplier1]
     ([Suppliers1_Id]);
+GO
+
+-- Creating foreign key on [KomitasKFCs_Id] in table 'KomitasKFCSupplier'
+ALTER TABLE [dbo].[KomitasKFCSupplier]
+ADD CONSTRAINT [FK_KomitasKFCSupplier_KomitasKFC]
+    FOREIGN KEY ([KomitasKFCs_Id])
+    REFERENCES [dbo].[KomitasKFCs]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [Suppliers_Id] in table 'KomitasKFCSupplier'
+ALTER TABLE [dbo].[KomitasKFCSupplier]
+ADD CONSTRAINT [FK_KomitasKFCSupplier_Supplier]
+    FOREIGN KEY ([Suppliers_Id])
+    REFERENCES [dbo].[Suppliers]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_KomitasKFCSupplier_Supplier'
+CREATE INDEX [IX_FK_KomitasKFCSupplier_Supplier]
+ON [dbo].[KomitasKFCSupplier]
+    ([Suppliers_Id]);
 GO
 
 -- --------------------------------------------------

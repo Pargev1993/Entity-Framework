@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="968c2ddde9204cd7bd21a40b09579364" Name="Diagram1" ZoomLevel="89" >
+        <EntityTypeShape EntityType="Derjavadb.Derjava" Width="1.5" PointX="3" PointY="3.125" />
+        <EntityTypeShape EntityType="Derjavadb.YerevanMallKFC" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Derjavadb.MoskovyanKFC" Width="1.5" PointX="0.75" PointY="8.25" />
+        <EntityTypeShape EntityType="Derjavadb.RIOKFC" Width="1.5" PointX="0.75" PointY="11.5" />
+        <EntityTypeShape EntityType="Derjavadb.DalmaMallKFC" Width="1.5" PointX="0.75" PointY="14.875" />
+        <EntityTypeShape EntityType="Derjavadb.Delivary" Width="1.5" PointX="3" PointY="13.125" />
+        <EntityTypeShape EntityType="Derjavadb.Supplier" Width="1.5" PointX="6" PointY="3.375" />
+        <EntityTypeShape EntityType="Derjavadb.KomitasKFC" Width="1.5" PointX="0.75" PointY="17.875" />
+        <AssociationConnector Association="Derjavadb.YerevanMallKFCDerjava" />
+        <AssociationConnector Association="Derjavadb.DalmaMallKFCDerjava" />
+        <AssociationConnector Association="Derjavadb.MoskovyanKFCDerjava" />
+        <AssociationConnector Association="Derjavadb.RIOKFCDerjava" />
+        <AssociationConnector Association="Derjavadb.KomitasKFCDerjava" />
+        <AssociationConnector Association="Derjavadb.MoskovyanKFCDelivary" />
+        <AssociationConnector Association="Derjavadb.KomitasKFCDelivary" />
+        <AssociationConnector Association="Derjavadb.YerevanMallKFCSupplier" />
+        <AssociationConnector Association="Derjavadb.YerevanMallKFCSupplier1" />
+        <AssociationConnector Association="Derjavadb.DalmaMallKFCSupplier" />
+        <AssociationConnector Association="Derjavadb.MoskovyanKFCSupplier" />
+        <AssociationConnector Association="Derjavadb.RIOKFCSupplier" />
+        <AssociationConnector Association="Derjavadb.RIOKFCSupplier1" />
+        <AssociationConnector Association="Derjavadb.KomitasKFCSupplier" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

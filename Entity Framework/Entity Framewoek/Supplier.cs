@@ -19,10 +19,10 @@ namespace Entity_Framewoek
         {
             this.YerevanMallKFC1 = new HashSet<YerevanMallKFC>();
             this.DalmaMallKFCs = new HashSet<DalmaMallKFC>();
-            this.KomitasKFCs = new HashSet<KomitasKFC>();
             this.MoskovyanKFCs = new HashSet<MoskovyanKFC>();
             this.RIOKFCs = new HashSet<RIOKFC>();
             this.RIOKFC = new HashSet<RIOKFC>();
+            this.KomitasKFCs = new HashSet<KomitasKFC>();
         }
     
         public int Id { get; set; }
@@ -36,12 +36,12 @@ namespace Entity_Framewoek
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DalmaMallKFC> DalmaMallKFCs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KomitasKFC> KomitasKFCs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MoskovyanKFC> MoskovyanKFCs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RIOKFC> RIOKFCs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RIOKFC> RIOKFC { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KomitasKFC> KomitasKFCs { get; set; }
     }
 }

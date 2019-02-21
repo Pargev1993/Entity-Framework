@@ -13,10 +13,10 @@ namespace Entity_Framewoek
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Model1Container : DbContext
+    public partial class DerjavadbContainer : DbContext
     {
-        public Model1Container()
-            : base("name=Model1Container")
+        public DerjavadbContainer()
+            : base("name=DerjavadbContainer")
         {
         }
     
@@ -27,11 +27,11 @@ namespace Entity_Framewoek
     
         public virtual DbSet<Derjava> Derjavas { get; set; }
         public virtual DbSet<YerevanMallKFC> YerevanMallKFCs { get; set; }
-        public virtual DbSet<KomitasKFC> KomitasKFCs { get; set; }
         public virtual DbSet<MoskovyanKFC> MoskovyanKFCs { get; set; }
         public virtual DbSet<RIOKFC> RIOKFCs { get; set; }
         public virtual DbSet<DalmaMallKFC> DalmaMallKFCs { get; set; }
         public virtual DbSet<Delivary> Delivaries { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
+        public virtual DbSet<KomitasKFC> KomitasKFCs { get; set; }
     }
 }

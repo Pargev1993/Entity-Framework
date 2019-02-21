@@ -17,7 +17,6 @@ namespace Entity_Framewoek
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KomitasKFC()
         {
-            this.Derjavas = new HashSet<Derjava>();
             this.Delivaries = new HashSet<Delivary>();
             this.Suppliers = new HashSet<Supplier>();
         }
@@ -28,8 +27,6 @@ namespace Entity_Framewoek
         public int Age { get; set; }
         public string Gender { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Derjava> Derjavas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Delivary> Delivaries { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
