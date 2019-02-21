@@ -72,7 +72,7 @@ namespace Entity_Framewoek
                 dalmaMallKFC.Derjavas.Add(derjava);
                 rIOKFC.Derjavas.Add(derjava);
                 moskovyanKFC.Derjavas.Add(derjava);
-                komitasKFC.Derjavas.Add(derjava);
+               // komitasKFC.Derjavas.Add(derjava);
                 supplier.DalmaMallKFCs.Add(dalmaMallKFC);
                 supplier.MoskovyanKFCs.Add(moskovyanKFC);
                 supplier.RIOKFCs.Add(rIOKFC);
