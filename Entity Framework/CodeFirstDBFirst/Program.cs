@@ -16,6 +16,8 @@ namespace CodeFirstDBFirst
                 {
                     FormColor = "Read",
                     Nickname = "Ronaldo",
+                    Experiance="25"
+                    
                 };
                 fIFAdb.Footballists.Add(footballist);
                 Game game = new Game()
@@ -43,8 +45,17 @@ namespace CodeFirstDBFirst
                 game.Footballists.Add(footballist);
                 game.Referees.Add(referee);
                 footballist.Trainers.Add(trainer);
-             
-                fIFAdb.SaveChanges();
+                try
+                {
+
+                     fIFAdb.SaveChanges();
+                }
+                catch (System.Data.Entity.Validation.DbEntityValidationException e)
+                {
+
+                    Console.WriteLine(e.Message); 
+                }
+               
 
          
 
