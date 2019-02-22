@@ -16,7 +16,7 @@ namespace CodeFirstDBFirst
     public partial class FIFAdbEntities : DbContext
     {
         public FIFAdbEntities()
-            : base("name=FIFAdbEntities")
+            : base(" FIFAdbEntities")
         {
         }
     
