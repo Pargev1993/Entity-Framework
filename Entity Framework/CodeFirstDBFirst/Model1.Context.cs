@@ -13,10 +13,10 @@ namespace CodeFirstDBFirst
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FIFAdbEntities : DbContext
+    public partial class Model1Container1 : DbContext
     {
-        public FIFAdbEntities()
-            : base(" FIFAdbEntities")
+        public Model1Container1()
+            : base("name=Model1Container1")
         {
         }
     
