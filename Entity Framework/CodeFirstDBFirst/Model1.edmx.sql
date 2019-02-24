@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/21/2019 10:46:38
--- Generated from EDMX file: C:\Users\pqoal\Source\Repos\Entity-Framework2\Entity Framework\CodeFirstDBFirst\Model1.edmx
+-- Date Created: 02/22/2019 18:14:48
+-- Generated from EDMX file: C:\Users\pargev.avagyan\Source\Repos\Entity-Framework\Entity Framework\CodeFirstDBFirst\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [FIFAdb];
+USE [Fifadb];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -61,17 +61,17 @@ CREATE TABLE [dbo].[Referees] (
 );
 GO
 
--- Creating table 'RefereeGame'
-CREATE TABLE [dbo].[RefereeGame] (
-    [Referees_Id] int  NOT NULL,
-    [Games_Id] int  NOT NULL
-);
-GO
-
 -- Creating table 'FootballistTrainer'
 CREATE TABLE [dbo].[FootballistTrainer] (
     [Footballists_Id] int  NOT NULL,
     [Trainers_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'RefereeGame'
+CREATE TABLE [dbo].[RefereeGame] (
+    [Referees_Id] int  NOT NULL,
+    [Games_Id] int  NOT NULL
 );
 GO
 
@@ -103,16 +103,16 @@ ADD CONSTRAINT [PK_Referees]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Referees_Id], [Games_Id] in table 'RefereeGame'
-ALTER TABLE [dbo].[RefereeGame]
-ADD CONSTRAINT [PK_RefereeGame]
-    PRIMARY KEY CLUSTERED ([Referees_Id], [Games_Id] ASC);
-GO
-
 -- Creating primary key on [Footballists_Id], [Trainers_Id] in table 'FootballistTrainer'
 ALTER TABLE [dbo].[FootballistTrainer]
 ADD CONSTRAINT [PK_FootballistTrainer]
     PRIMARY KEY CLUSTERED ([Footballists_Id], [Trainers_Id] ASC);
+GO
+
+-- Creating primary key on [Referees_Id], [Games_Id] in table 'RefereeGame'
+ALTER TABLE [dbo].[RefereeGame]
+ADD CONSTRAINT [PK_RefereeGame]
+    PRIMARY KEY CLUSTERED ([Referees_Id], [Games_Id] ASC);
 GO
 
 -- --------------------------------------------------
@@ -132,30 +132,6 @@ GO
 CREATE INDEX [IX_FK_FootballistGame]
 ON [dbo].[Footballists]
     ([Game_Id]);
-GO
-
--- Creating foreign key on [Referees_Id] in table 'RefereeGame'
-ALTER TABLE [dbo].[RefereeGame]
-ADD CONSTRAINT [FK_RefereeGame_Referee]
-    FOREIGN KEY ([Referees_Id])
-    REFERENCES [dbo].[Referees]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating foreign key on [Games_Id] in table 'RefereeGame'
-ALTER TABLE [dbo].[RefereeGame]
-ADD CONSTRAINT [FK_RefereeGame_Game]
-    FOREIGN KEY ([Games_Id])
-    REFERENCES [dbo].[Games]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_RefereeGame_Game'
-CREATE INDEX [IX_FK_RefereeGame_Game]
-ON [dbo].[RefereeGame]
-    ([Games_Id]);
 GO
 
 -- Creating foreign key on [Footballists_Id] in table 'FootballistTrainer'
@@ -180,6 +156,30 @@ GO
 CREATE INDEX [IX_FK_FootballistTrainer_Trainer]
 ON [dbo].[FootballistTrainer]
     ([Trainers_Id]);
+GO
+
+-- Creating foreign key on [Referees_Id] in table 'RefereeGame'
+ALTER TABLE [dbo].[RefereeGame]
+ADD CONSTRAINT [FK_RefereeGame_Referee]
+    FOREIGN KEY ([Referees_Id])
+    REFERENCES [dbo].[Referees]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [Games_Id] in table 'RefereeGame'
+ALTER TABLE [dbo].[RefereeGame]
+ADD CONSTRAINT [FK_RefereeGame_Game]
+    FOREIGN KEY ([Games_Id])
+    REFERENCES [dbo].[Games]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RefereeGame_Game'
+CREATE INDEX [IX_FK_RefereeGame_Game]
+ON [dbo].[RefereeGame]
+    ([Games_Id]);
 GO
 
 -- --------------------------------------------------

@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0a4c8d2039f445f78541b87d345eefec" Name="Diagram1" ZoomLevel="74" >
-        <EntityTypeShape EntityType="FIFAdbModel.Footballist" Width="1.5" PointX="6" PointY="0.625" />
-        <EntityTypeShape EntityType="FIFAdbModel.Game" Width="1.5" PointX="6.125" PointY="3.375" />
-        <EntityTypeShape EntityType="FIFAdbModel.Trainer" Width="1.5" PointX="1.25" PointY="2.875" />
-        <EntityTypeShape EntityType="FIFAdbModel.Referee" Width="1.5" PointX="1.25" PointY="0.5" />
-        <AssociationConnector Association="FIFAdbModel.FootballistGame" />
-        <AssociationConnector Association="FIFAdbModel.RefereeGame" />
-        <AssociationConnector Association="FIFAdbModel.FootballistTrainer" />
+      <Diagram DiagramId="f4695cba65fd45f0837289825102bbf4" Name="Diagram1" ZoomLevel="96" >
+        <EntityTypeShape EntityType="Model1.Footballist" Width="1.5" PointX="0.75" PointY="3.625" />
+        <EntityTypeShape EntityType="Model1.Game" Width="1.5" PointX="3" PointY="3.875" />
+        <EntityTypeShape EntityType="Model1.Trainer" Width="1.5" PointX="3" PointY="6.375" />
+        <EntityTypeShape EntityType="Model1.Referee" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="Model1.FootballistGame" />
+        <AssociationConnector Association="Model1.FootballistTrainer" />
+        <AssociationConnector Association="Model1.RefereeGame" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

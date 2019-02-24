@@ -28,10 +28,5 @@ namespace CodeFirstDBFirst
         public virtual ICollection<Footballist> Footballists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Referee> Referees { get; set; }
-
-        public static implicit operator Game(int v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

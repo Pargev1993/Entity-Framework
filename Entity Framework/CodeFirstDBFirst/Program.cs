@@ -10,30 +10,30 @@ namespace CodeFirstDBFirst
     {
         static void Main(string[] args)
         {
-            using (FIFAdbEntities fIFAdb=new  FIFAdbEntities())
+            using (Model1Container1 fIFAdb =new Model1Container1())
             {
                 Footballist footballist = new Footballist()
                 {
-                    FormColor = "Read",
-                    Nickname = "Ronaldo",
-                    Experiance="25"
+                    FormColor = "Blue",
+                    Nickname = "Zidan",
+                    Experiance="53"
                     
                 };
                 fIFAdb.Footballists.Add(footballist);
                 Game game = new Game()
                 {
-                    Location = "Brazil",
+                    Location = "Argentina",
                 };
                 Trainer trainer = new Trainer()
                 {
-                    Nickname = "Balu",
-                    Age = "45"
+                    Nickname = "Xose",
+                    Age = "43"
                 };
                 Referee referee = new Referee()
                 {
-                    Experiance = "10",
-                    FirstName = "Andru",
-                    Isfair = "Yes"
+                    Experiance = "15",
+                    FirstName = "Jone",
+                    Isfair = "NO"
                 };
                 fIFAdb.Referees.Add(referee);
                 fIFAdb.Games.Add(game);

@@ -4,33 +4,33 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="FIFAdbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="FIFAdbModelStoreContainer">
-    <EntitySet Name="Footballists" EntityType="FIFAdbModel.Store.Footballists" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Games" EntityType="FIFAdbModel.Store.Games" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Trainers" EntityType="FIFAdbModel.Store.Trainers" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Referees" EntityType="FIFAdbModel.Store.Referees" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="RefereeGame" EntityType="FIFAdbModel.Store.RefereeGame" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="FootballistTrainer" EntityType="FIFAdbModel.Store.FootballistTrainer" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FootballistGame" Association="FIFAdbModel.Store.FootballistGame">
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Footballists" EntityType="Model1.Store.Footballists" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Games" EntityType="Model1.Store.Games" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Trainers" EntityType="Model1.Store.Trainers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Referees" EntityType="Model1.Store.Referees" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FootballistTrainer" EntityType="Model1.Store.FootballistTrainer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RefereeGame" EntityType="Model1.Store.RefereeGame" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FootballistGame" Association="Model1.Store.FootballistGame">
       <End Role="Footballist" EntitySet="Footballists" />
       <End Role="Game" EntitySet="Games" />
     </AssociationSet>
-    <AssociationSet Name="FK_RefereeGame_Referee" Association="FIFAdbModel.Store.FK_RefereeGame_Referee">
+    <AssociationSet Name="FK_FootballistTrainer_Footballist" Association="Model1.Store.FK_FootballistTrainer_Footballist">
+      <End Role="Footballist" EntitySet="Footballists" />
+      <End Role="FootballistTrainer" EntitySet="FootballistTrainer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FootballistTrainer_Trainer" Association="Model1.Store.FK_FootballistTrainer_Trainer">
+      <End Role="Trainer" EntitySet="Trainers" />
+      <End Role="FootballistTrainer" EntitySet="FootballistTrainer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RefereeGame_Referee" Association="Model1.Store.FK_RefereeGame_Referee">
       <End Role="Referee" EntitySet="Referees" />
       <End Role="RefereeGame" EntitySet="RefereeGame" />
     </AssociationSet>
-    <AssociationSet Name="FK_RefereeGame_Game" Association="FIFAdbModel.Store.FK_RefereeGame_Game">
+    <AssociationSet Name="FK_RefereeGame_Game" Association="Model1.Store.FK_RefereeGame_Game">
       <End Role="Game" EntitySet="Games" />
       <End Role="RefereeGame" EntitySet="RefereeGame" />
-    </AssociationSet>
-    <AssociationSet Name="FK_FootballistTrainer_Footballist" Association="FIFAdbModel.Store.FK_FootballistTrainer_Footballist">
-      <End Role="Footballist" EntitySet="Footballists" />
-      <End Role="FootballistTrainer" EntitySet="FootballistTrainer" />
-    </AssociationSet>
-    <AssociationSet Name="FK_FootballistTrainer_Trainer" Association="FIFAdbModel.Store.FK_FootballistTrainer_Trainer">
-      <End Role="Trainer" EntitySet="Trainers" />
-      <End Role="FootballistTrainer" EntitySet="FootballistTrainer" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Footballists">
@@ -67,14 +67,6 @@
     <Property Name="Experiance" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Isfair" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="RefereeGame">
-    <Key>
-      <PropertyRef Name="Referees_Id" />
-      <PropertyRef Name="Games_Id" />
-    </Key>
-    <Property Name="Referees_Id" Type="int" Nullable="false" />
-    <Property Name="Games_Id" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="FootballistTrainer">
     <Key>
       <PropertyRef Name="Footballists_Id" />
@@ -83,9 +75,17 @@
     <Property Name="Footballists_Id" Type="int" Nullable="false" />
     <Property Name="Trainers_Id" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="RefereeGame">
+    <Key>
+      <PropertyRef Name="Referees_Id" />
+      <PropertyRef Name="Games_Id" />
+    </Key>
+    <Property Name="Referees_Id" Type="int" Nullable="false" />
+    <Property Name="Games_Id" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="FootballistGame">
-    <End Role="Footballist" Type="FIFAdbModel.Store.Footballists" Multiplicity="*" />
-    <End Role="Game" Type="FIFAdbModel.Store.Games" Multiplicity="1" />
+    <End Role="Footballist" Type="Model1.Store.Footballists" Multiplicity="*" />
+    <End Role="Game" Type="Model1.Store.Games" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="Game">
         <PropertyRef Name="Id" />
@@ -95,33 +95,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_RefereeGame_Referee">
-    <End Role="Referee" Type="FIFAdbModel.Store.Referees" Multiplicity="1" />
-    <End Role="RefereeGame" Type="FIFAdbModel.Store.RefereeGame" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Referee">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="RefereeGame">
-        <PropertyRef Name="Referees_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_RefereeGame_Game">
-    <End Role="RefereeGame" Type="FIFAdbModel.Store.RefereeGame" Multiplicity="*" />
-    <End Role="Game" Type="FIFAdbModel.Store.Games" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Game">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="RefereeGame">
-        <PropertyRef Name="Games_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_FootballistTrainer_Footballist">
-    <End Role="Footballist" Type="FIFAdbModel.Store.Footballists" Multiplicity="1" />
-    <End Role="FootballistTrainer" Type="FIFAdbModel.Store.FootballistTrainer" Multiplicity="*" />
+    <End Role="Footballist" Type="Model1.Store.Footballists" Multiplicity="1" />
+    <End Role="FootballistTrainer" Type="Model1.Store.FootballistTrainer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Footballist">
         <PropertyRef Name="Id" />
@@ -132,8 +108,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_FootballistTrainer_Trainer">
-    <End Role="FootballistTrainer" Type="FIFAdbModel.Store.FootballistTrainer" Multiplicity="*" />
-    <End Role="Trainer" Type="FIFAdbModel.Store.Trainers" Multiplicity="1" />
+    <End Role="FootballistTrainer" Type="Model1.Store.FootballistTrainer" Multiplicity="*" />
+    <End Role="Trainer" Type="Model1.Store.Trainers" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="Trainer">
         <PropertyRef Name="Id" />
@@ -143,26 +119,50 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_RefereeGame_Referee">
+    <End Role="Referee" Type="Model1.Store.Referees" Multiplicity="1" />
+    <End Role="RefereeGame" Type="Model1.Store.RefereeGame" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Referee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RefereeGame">
+        <PropertyRef Name="Referees_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RefereeGame_Game">
+    <End Role="RefereeGame" Type="Model1.Store.RefereeGame" Multiplicity="*" />
+    <End Role="Game" Type="Model1.Store.Games" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Game">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RefereeGame">
+        <PropertyRef Name="Games_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="FIFAdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="FIFAdbEntities" annotation:LazyLoadingEnabled="true" >
-          <EntitySet Name="Footballists" EntityType="FIFAdbModel.Footballist" />
-          <EntitySet Name="Games" EntityType="FIFAdbModel.Game" />
-          <EntitySet Name="Trainers" EntityType="FIFAdbModel.Trainer" />
-          <EntitySet Name="Referees" EntityType="FIFAdbModel.Referee" />
-          <AssociationSet Name="FootballistGame" Association="FIFAdbModel.FootballistGame">
-            <End EntitySet="Footballists" Role="Footballist" />
-            <End EntitySet="Games" Role="Game" />
-          </AssociationSet>
-          <AssociationSet Name="RefereeGame" Association="FIFAdbModel.RefereeGame">
-            <End Role="Referee" EntitySet="Referees" />
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Footballists" EntityType="Model1.Footballist" />
+          <EntitySet Name="Games" EntityType="Model1.Game" />
+          <EntitySet Name="Trainers" EntityType="Model1.Trainer" />
+          <EntitySet Name="Referees" EntityType="Model1.Referee" />
+          <AssociationSet Name="FootballistGame" Association="Model1.FootballistGame">
+            <End Role="Footballist" EntitySet="Footballists" />
             <End Role="Game" EntitySet="Games" />
           </AssociationSet>
-          <AssociationSet Name="FootballistTrainer" Association="FIFAdbModel.FootballistTrainer">
+          <AssociationSet Name="FootballistTrainer" Association="Model1.FootballistTrainer">
             <End Role="Footballist" EntitySet="Footballists" />
             <End Role="Trainer" EntitySet="Trainers" />
+          </AssociationSet>
+          <AssociationSet Name="RefereeGame" Association="Model1.RefereeGame">
+            <End Role="Referee" EntitySet="Referees" />
+            <End Role="Game" EntitySet="Games" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Footballist">
@@ -173,8 +173,8 @@
           <Property Name="Nickname" Type="String" Nullable="false" />
           <Property Name="FormColor" Type="String" Nullable="false" />
           <Property Name="Experiance" Type="String" Nullable="false" />
-          <NavigationProperty Name="Game" Relationship="FIFAdbModel.FootballistGame" FromRole="Footballist" ToRole="Game" />
-          <NavigationProperty Name="Trainers" Relationship="FIFAdbModel.FootballistTrainer" FromRole="Footballist" ToRole="Trainer" />
+          <NavigationProperty Name="Game" Relationship="Model1.FootballistGame" FromRole="Footballist" ToRole="Game" />
+          <NavigationProperty Name="Trainers" Relationship="Model1.FootballistTrainer" FromRole="Footballist" ToRole="Trainer" />
         </EntityType>
         <EntityType Name="Game">
           <Key>
@@ -182,8 +182,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Location" Type="String" Nullable="false" />
-          <NavigationProperty Name="Footballists" Relationship="FIFAdbModel.FootballistGame" FromRole="Game" ToRole="Footballist" />
-          <NavigationProperty Name="Referees" Relationship="FIFAdbModel.RefereeGame" FromRole="Game" ToRole="Referee" />
+          <NavigationProperty Name="Footballists" Relationship="Model1.FootballistGame" FromRole="Game" ToRole="Footballist" />
+          <NavigationProperty Name="Referees" Relationship="Model1.RefereeGame" FromRole="Game" ToRole="Referee" />
         </EntityType>
         <EntityType Name="Trainer">
           <Key>
@@ -192,7 +192,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nickname" Type="String" Nullable="false" />
           <Property Name="Age" Type="String" Nullable="false" />
-          <NavigationProperty Name="Footballists" Relationship="FIFAdbModel.FootballistTrainer" FromRole="Trainer" ToRole="Footballist" />
+          <NavigationProperty Name="Footballists" Relationship="Model1.FootballistTrainer" FromRole="Trainer" ToRole="Footballist" />
         </EntityType>
         <EntityType Name="Referee">
           <Key>
@@ -202,28 +202,28 @@
           <Property Name="FirstName" Type="String" Nullable="false" />
           <Property Name="Experiance" Type="String" Nullable="false" />
           <Property Name="Isfair" Type="String" Nullable="false" />
-          <NavigationProperty Name="Games" Relationship="FIFAdbModel.RefereeGame" FromRole="Referee" ToRole="Game" />
+          <NavigationProperty Name="Games" Relationship="Model1.RefereeGame" FromRole="Referee" ToRole="Game" />
         </EntityType>
         <Association Name="FootballistGame">
-          <End Type="FIFAdbModel.Footballist" Multiplicity="*" Role="Footballist" />
-          <End Type="FIFAdbModel.Game" Multiplicity="1" Role="Game" />
-        </Association>
-        <Association Name="RefereeGame">
-          <End Type="FIFAdbModel.Referee" Role="Referee" Multiplicity="*" />
-          <End Type="FIFAdbModel.Game" Role="Game" Multiplicity="*" />
+          <End Type="Model1.Footballist" Role="Footballist" Multiplicity="*" />
+          <End Type="Model1.Game" Role="Game" Multiplicity="1" />
         </Association>
         <Association Name="FootballistTrainer">
-          <End Type="FIFAdbModel.Footballist" Role="Footballist" Multiplicity="*" />
-          <End Type="FIFAdbModel.Trainer" Role="Trainer" Multiplicity="*" />
+          <End Type="Model1.Footballist" Role="Footballist" Multiplicity="*" />
+          <End Type="Model1.Trainer" Role="Trainer" Multiplicity="*" />
+        </Association>
+        <Association Name="RefereeGame">
+          <End Type="Model1.Referee" Role="Referee" Multiplicity="*" />
+          <End Type="Model1.Game" Role="Game" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="FIFAdbModelStoreContainer" CdmEntityContainer="FIFAdbEntities">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container1">
     <EntitySetMapping Name="Footballists">
-      <EntityTypeMapping TypeName="IsTypeOf(FIFAdbModel.Footballist)">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Footballist)">
         <MappingFragment StoreEntitySet="Footballists">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nickname" ColumnName="Nickname" />
@@ -233,7 +233,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Games">
-      <EntityTypeMapping TypeName="IsTypeOf(FIFAdbModel.Game)">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Game)">
         <MappingFragment StoreEntitySet="Games">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Location" ColumnName="Location" />
@@ -241,7 +241,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Trainers">
-      <EntityTypeMapping TypeName="IsTypeOf(FIFAdbModel.Trainer)">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Trainer)">
         <MappingFragment StoreEntitySet="Trainers">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nickname" ColumnName="Nickname" />
@@ -250,7 +250,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Referees">
-      <EntityTypeMapping TypeName="IsTypeOf(FIFAdbModel.Referee)">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Referee)">
         <MappingFragment StoreEntitySet="Referees">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -259,7 +259,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="FootballistGame" TypeName="FIFAdbModel.FootballistGame" StoreEntitySet="Footballists">
+    <AssociationSetMapping Name="FootballistGame" TypeName="Model1.FootballistGame" StoreEntitySet="Footballists">
       <EndProperty Name="Game">
         <ScalarProperty Name="Id" ColumnName="Game_Id" />
       </EndProperty>
@@ -267,15 +267,7 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="RefereeGame" TypeName="FIFAdbModel.RefereeGame" StoreEntitySet="RefereeGame">
-      <EndProperty Name="Referee">
-        <ScalarProperty Name="Id" ColumnName="Referees_Id" />
-      </EndProperty>
-      <EndProperty Name="Game">
-        <ScalarProperty Name="Id" ColumnName="Games_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="FootballistTrainer" TypeName="FIFAdbModel.FootballistTrainer" StoreEntitySet="FootballistTrainer">
+    <AssociationSetMapping Name="FootballistTrainer" TypeName="Model1.FootballistTrainer" StoreEntitySet="FootballistTrainer">
       <EndProperty Name="Footballist">
         <ScalarProperty Name="Id" ColumnName="Footballists_Id" />
       </EndProperty>
@@ -283,26 +275,34 @@
         <ScalarProperty Name="Id" ColumnName="Trainers_Id" />
       </EndProperty>
     </AssociationSetMapping>
+    <AssociationSetMapping Name="RefereeGame" TypeName="Model1.RefereeGame" StoreEntitySet="RefereeGame">
+      <EndProperty Name="Referee">
+        <ScalarProperty Name="Id" ColumnName="Referees_Id" />
+      </EndProperty>
+      <EndProperty Name="Game">
+        <ScalarProperty Name="Id" ColumnName="Games_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
-    <Connection>
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
       </DesignerInfoPropertySet>
-    </Connection>
-    <Options>
+    </edmx:Connection>
+    <edmx:Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
       </DesignerInfoPropertySet>
-    </Options>
+    </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
-  </Designer>
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
 </edmx:Edmx>
